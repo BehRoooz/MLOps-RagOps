@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.core.config import settings
-from app.api import health, ingest, search, chat, stats, embeddings, pdf
+from app.api import health, ingest, search, chat, stats, embeddings, pdf, batch_ingest
 
 app = FastAPI(title=settings.APP_NAME, version=settings.APP_VERSION)
 
@@ -12,3 +12,4 @@ app.include_router(chat.router, tags=["chat"])
 app.include_router(stats.router, tags=["stats"])
 app.include_router(embeddings.router, tags=["embeddings"])
 app.include_router(pdf.router, tags=["pdf"])
+app.include_router(batch_ingest.router, tags=["batch_ingest"])
