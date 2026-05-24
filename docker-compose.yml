@@ -108,7 +108,7 @@ services:
       - MEILI_URL=http://meilisearch:7700
       - MEILI_KEY=${MEILI_KEY}
       - PROXY_URL=http://litellm:4000
-      - PROXY_KEY=${LITELLM_KEY}
+      - PROXY_KEY=${PROXY_KEY}
     depends_on:
       meilisearch:
         condition: service_healthy
@@ -145,6 +145,31 @@ services:
     restart: unless-stopped
     depends_on:
       - prometheus
+
+  ragas_eval:
+    build: ./backend
+    command: ["python", "-m","app.eval.ragas_eval"]
+    environment:
+      - PROXY_URL=${PROXY_URL}
+      - PROXY_KEY=${PROXY_KEY}
+      - MEILI_URL=${MEILI_URL}
+      - MEILI_KEY=${MEILI_KEY}
+      - LITELLM_MODEL=${LITELLM_MODEL}
+      - REDIS_URL=${REDIS_URL}
+      - EMBEDDING_MODEL_NAME=${EMBEDDING_MODEL_NAME}
+    depends_on:
+      meilisearch:
+        condition: service_healthy
+      litellm:
+        condition: service_started
+      tei-embeddings:
+        condition: service_started
+      redis:
+        condition: service_started
+    restart: "on-failure"
+    profiles: ["eval"]
+
+
 
 volumes:
   meili_data:
