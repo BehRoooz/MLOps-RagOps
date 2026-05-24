@@ -20,4 +20,11 @@ class Settings:
     EMBEDDING_MODEL_NAME: str = os.environ["EMBEDDING_MODEL_NAME"]  # TEI embeddings via LiteLLM proxy
     TEI_EMBEDDINGS_URL: str = os.getenv("PROXY_URL", "http://litellm:4000") + "/v1"  # Direct TEI endpoint
     
+    # LLM and Embeddings settings for RAGAS evaluation
+    LITELLM_MODEL: str = os.environ["LITELLM_MODEL"]
+    LITELLM_URL: str = os.getenv("PROXY_URL", "http://litellm:4000") + "/v1"
+    EMBEDDING_MODEL_NAME: str = os.environ["EMBEDDING_MODEL_NAME"]
+    TEI_EMBEDDINGS_URL: str = os.getenv("PROXY_URL", "http://litellm:4000") + "/v1"
+    
+
 settings = Settings()
