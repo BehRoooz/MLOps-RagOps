@@ -1,0 +1,58 @@
+{
+    "id": null,
+    "title": "FastAPI Monitoring",
+    "tags": ["fastapi", "prometheus"],
+    "timezone": "browser",
+  "schemaVersion": 39,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "Total HTTP Requests",
+        "targets": [
+          {
+            "expr": "sum(increase(http_requests_total[5m]))",
+            "legendFormat": "total",
+  "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 0, "w": 6, "h": 3 }
+      },
+      {
+        "type": "graph",
+        "title": "Requests by Endpoint",
+        "targets": [
+          {
+            "expr": "sum by (handler, method, status) (rate(http_requests_total[1m]))",
+            "legendFormat": "{{handler}} {{method}} {{status}}",
+  "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 3, "w": 12, "h": 6 }
+      },
+      {
+        "type": "stat",
+        "title": "5xx Error Rate (%)",
+        "targets": [
+          {
+            "expr": "100 * sum(rate(http_requests_total{status=~\"5..\"}[5m])) / sum(rate(http_requests_total[5m]))",
+  "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 6, "y": 0, "w": 6, "h": 3 }
+      },
+      {
+        "type": "graph",
+        "title": "Request Duration (p95)",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))",
+  "legendFormat": "p95",
+  "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 9, "w": 12, "h": 6 }
+      }
+    ]
+  }
