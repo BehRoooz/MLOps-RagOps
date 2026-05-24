@@ -24,6 +24,8 @@ litellm_settings:
     url: "redis://redis:6379"
     ttl: 1800
     supported_call_types: ["completion", "chat_completion", "embedding", "acompletion", "aembedding"]
+  success_callback: ["langsmith"]
+  failure_callback: ["langsmith"]
 
 # Prompt Injection basic guards
 prompt_injection_params:
