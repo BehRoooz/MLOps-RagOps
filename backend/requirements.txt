@@ -15,5 +15,5 @@ langchain-text-splitters==0.2.2
 python-multipart
 pypdf==5.0.0 
 prometheus_fastapi_instrumentator==7.1.0
-ragas
+ragas==0.4.3
 datasets>=2.19.2
