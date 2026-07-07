@@ -1,4 +1,6 @@
-#imports
+"""
+This module is used to evaluate the RAGAS model.
+"""
 import asyncio
 from typing import List, Dict, Any
 
