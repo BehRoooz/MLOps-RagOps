@@ -1,3 +1,7 @@
+"""
+This module is used to generate chat completions and RAG answers.
+"""
+
 import httpx
 from typing import List, Dict, Any
 from app.core.config import settings
