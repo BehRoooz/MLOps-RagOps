@@ -31,7 +31,7 @@ The API is the primary interface. Interactive documentation is available at `/do
 
 ```
 ┌──────────────┐     ┌─────────────────────────────────────────────────────────────┐
-│   Client     │────▶│                    FastAPI Backend (:18000)                  │
+│   Client     │────▶│                    FastAPI Backend (:18000)                 │
 │  (curl/SDK)  │     │  ingest · search · RAG · upload · metadata · metrics        │
 └──────────────┘     └──────┬──────────┬──────────┬──────────┬──────────┬──────────┘
                             │          │          │          │          │
@@ -43,11 +43,11 @@ The API is the primary interface. Interactive documentation is available at `/do
      │  chunks index  │      └──────┬───────┘ └────────┘ └────────┘      └────────────────┘
      └────────────────┘             │
                                     ▼
-                          ┌──────────────────┐
-                          │  TEI Embeddings  │        ┌──────────────┐
-                          │  (CPU, 384-dim)│        │  Groq LLM    │
-                          └──────────────────┘        │  (external)  │
-                                                      └──────────────┘
+                          ┌─────────────────┐
+                          │  Groq LLM       │       ┌────────────────────┐
+                          │  (external)     │───────│  TEI Embeddings    │
+                          └─────────────────┘       │ (CPU, 384-dim)     │
+                                                    └────────────────────┘
 
      Observability:  Prometheus (:9090)  →  Grafana (:3000)
 ```
