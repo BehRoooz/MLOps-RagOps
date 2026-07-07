@@ -1,3 +1,7 @@
+"""
+This module is used to perform RAG search and generate answers.
+"""
+
 from typing import Dict, Any, List
 from app.core.config import settings
 from app.core.clients import meili_client
