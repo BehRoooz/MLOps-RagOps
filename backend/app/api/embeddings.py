@@ -1,3 +1,7 @@
+"""
+This module is used to generate embeddings for the documents.
+"""
+
 from fastapi import APIRouter, HTTPException
 from typing import List
 from app.core.clients import meili_client
