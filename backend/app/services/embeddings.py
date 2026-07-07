@@ -1,3 +1,7 @@
+"""
+This module is used to generate embeddings for the documents.
+"""
+
 import httpx
 from typing import List, Optional
 from app.core.config import settings
