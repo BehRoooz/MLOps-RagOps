@@ -1,3 +1,7 @@
+"""
+This module is used to ingest documents into Meilisearch.
+"""
+
 from datetime import datetime
 from typing import List, Dict, Any
 from app.core.clients import meili_client
