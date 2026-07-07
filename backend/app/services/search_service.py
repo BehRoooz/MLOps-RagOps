@@ -1,3 +1,7 @@
+"""
+This module is used to search the documents.
+"""
+
 from typing import Dict, Any
 from fastapi import HTTPException
 from app.core.clients import meili_client
