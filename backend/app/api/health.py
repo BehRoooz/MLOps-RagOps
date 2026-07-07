@@ -1,3 +1,7 @@
+"""
+This module is used to check the health of the application.
+"""
+
 from fastapi import APIRouter
 from app.models.health import HealthResponse
 from app.core.config import settings
