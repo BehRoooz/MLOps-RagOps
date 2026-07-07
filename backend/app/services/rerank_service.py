@@ -1,3 +1,6 @@
+"""
+This module is used to perform reranking of the documents.
+"""
 import httpx
 import numpy as np
 from typing import Dict, Any
