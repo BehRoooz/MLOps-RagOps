@@ -1,3 +1,6 @@
+"""
+This module is used to chat with the model.
+"""
 from fastapi import APIRouter, HTTPException
 from app.models.chat import ChatRequest
 from app.services.llm_service import generate_chat_completion
