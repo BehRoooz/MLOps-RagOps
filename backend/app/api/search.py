@@ -1,3 +1,7 @@
+"""
+This module is used to search the documents.
+"""
+
 from fastapi import APIRouter, HTTPException
 from app.models.search import SearchRequest, DirectSearchResult, SearchResponse
 from app.services.search_service import search_documents, search_chunks
