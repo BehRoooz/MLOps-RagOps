@@ -1,3 +1,7 @@
+"""
+This module is used to get the stats of the application.
+"""
+
 from fastapi import APIRouter, HTTPException
 from app.core.clients import meili_client
 from app.core.config import settings
