@@ -1,3 +1,4 @@
+fpdf
 fastapi==0.112.0
 uvicorn[standard]==0.30.5
 httpx==0.27.0
@@ -14,6 +15,13 @@ anyio==4.4.0
 langchain-text-splitters==0.2.2
 python-multipart
 pypdf==5.0.0 
-prometheus_fastapi_instrumentator==7.1.0
-ragas==0.4.3
-datasets>=2.19.2
+litellm>=1.43.0
+prometheus-fastapi-instrumentator>=6.0.0
+prometheus-client>=0.16.0
+
+ragas 
+datasets>=2.19.2 
+pytest
+
+psycopg2-binary==2.9.9
+minio==7.2.8
