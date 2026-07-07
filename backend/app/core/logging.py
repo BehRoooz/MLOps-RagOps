@@ -1,3 +1,6 @@
+"""
+This module is used to configure the logging for the application.
+"""
 import logging
 import os
 from logging import Logger, LogRecord
