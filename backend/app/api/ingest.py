@@ -1,3 +1,7 @@
+"""
+This module is used to ingest documents into the system.
+"""
+
 from fastapi import APIRouter, HTTPException
 from app.models.documents import Document
 from app.services.ingestion import ingest_documents
