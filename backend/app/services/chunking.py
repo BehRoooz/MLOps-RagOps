@@ -1,3 +1,7 @@
+"""
+This module is used to chunk the text into smaller chunks.
+"""
+
 from typing import List
 
 
