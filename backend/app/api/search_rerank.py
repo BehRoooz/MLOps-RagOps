@@ -1,3 +1,7 @@
+"""
+This module is used to search and rerank the documents.
+"""
+
 from fastapi import APIRouter, HTTPException
 from app.models.rerank import RerankRequest
 from app.services.rerank_service import search_with_reranking
